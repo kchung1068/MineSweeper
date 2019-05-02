@@ -9,7 +9,15 @@
 import UIKit
 import SafariServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
     let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
     let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
     
@@ -19,10 +27,9 @@ class ViewController: UIViewController {
         youLose.addAction(youLoseAction)
     } //test
         
-    }
+    
     @IBAction func helpButton(_ sender: Any) {
     }
-    
 
 }
 
