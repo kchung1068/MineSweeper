@@ -60,6 +60,9 @@
                             <barButtonItem title="Easy" id="9jp-vU-bfB"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="UbH-aa-2VY" id="Sgg-bn-GNw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
