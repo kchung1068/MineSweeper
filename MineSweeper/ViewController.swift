@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  MineSweeper
 //
-//  Created by Kyle Chung on 5/1/19.
-//  Copyright © 2019 Kyle Chung. All rights reserved.
+//  Created by Kyle Chung, Sam Schuffler, Ryan Kaiser, Zach Calcagno on 5/1/19.
+//  Copyright © 2019 Kyle Chung Sam Schuffler, Ryan Kaiser, Zach Calcagno. All rights reserved.
 //
 
 import UIKit
@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         youLose.addAction(youLoseAction)
     } //test
+        
+    }
     @IBAction func helpButton(_ sender: Any) {
     }
     
