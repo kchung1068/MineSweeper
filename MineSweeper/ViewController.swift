@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
 
@@ -14,7 +15,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
     }
-
+    @IBAction func helpButton(_ sender: Any) {
+    }
+    
 
 }
 

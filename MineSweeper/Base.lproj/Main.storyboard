@@ -21,6 +21,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="kMM-On-t8P">
+                        <barButtonItem key="leftBarButtonItem" title="Help" id="K50-Zh-pMd">
+                            <connections>
+                                <action selector="helpButton:" destination="BYZ-38-t0r" id="aJ5-Q9-nR7"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Hard" id="Ccb-TO-9oE"/>
                             <barButtonItem title="Medium" id="hiq-Tc-SX3"/>
