@@ -11,15 +11,16 @@ import SafariServices
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    var numbers = [1,2,3]
+    
+    
     @IBOutlet var collectionView: UICollectionView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+       return numbers.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
-    }
     
     let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
     let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
