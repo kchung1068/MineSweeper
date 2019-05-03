@@ -12,7 +12,7 @@ import SafariServices
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var numbers = [1,2,3]
-    
+    let randomNumber = Int.random(in: 0 ... 99)
     
     @IBOutlet var collectionView: UICollectionView!
     
