@@ -39,6 +39,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     
     @IBAction func helpButton(_ sender: Any) {
+        showSafariVC(for: "https://www.wikihow.com/Play-Minesweeper")
+    }
+    
+    func showSafariVC(for url: String) {
+        guard let url = URL(string: url) else {
+            
+            return
+            
+        }
+        let safariVC = SFSafariViewController(url: url)
+        present(safariVC, animated: true)
     }
 
 }
