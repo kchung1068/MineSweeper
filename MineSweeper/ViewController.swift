@@ -8,21 +8,28 @@
 
 import UIKit
 import SafariServices
+import MapKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+        
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return numbers.count
     }
     
-    
     var numbers = [1,2,3]
+    
+    
     let randomNumber = Int.random(in: 0 ... 99)
     
     @IBOutlet var collectionView: UICollectionView!
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return numbers.count
-    }
+   
     
     
     
