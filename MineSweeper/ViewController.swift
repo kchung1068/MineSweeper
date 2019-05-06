@@ -10,6 +10,10 @@ import UIKit
 import SafariServices
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
     
     var numbers = [1,2,3]
     let randomNumber = Int.random(in: 0 ... 99)
