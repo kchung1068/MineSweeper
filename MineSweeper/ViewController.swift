@@ -44,6 +44,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.dataSource = self
         youLose.addAction(youLoseAction)
     } //test
+    
         
     
     @IBAction func helpButton(_ sender: Any) {
