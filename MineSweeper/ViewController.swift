@@ -52,7 +52,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func showSafariVC(for url: String) {
         guard let url = URL(string: url) else {return}
         let safariVC = SFSafariViewController(url: url)
-        present(safariVC, animated: true)
+        present(safariVC, animated: true, completion: nil)
     }
 
 }
