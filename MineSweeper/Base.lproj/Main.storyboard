@@ -41,8 +41,10 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="cellImageView" destination="EdX-0x-ebk" id="hDi-uH-AYh"/>
+                                            <outletCollection property="gestureRecognizers" destination="MfJ-Az-2uH" appends="YES" id="0fD-jC-y4y"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -69,8 +71,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="MfJ-Az-2uH">
+                    <connections>
+                        <action selector="whenTapGesturePressed:" destination="BYZ-38-t0r" id="Rsu-bC-d7c"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2637.68115942029" y="129.91071428571428"/>
+            <point key="canvasLocation" x="2646" y="130"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hKH-Xd-6NP">

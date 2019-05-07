@@ -45,7 +45,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         youLose.addAction(youLoseAction)
     } //test
     
-        
+    @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
+        print("erg")
+    }
     
     @IBAction func helpButton(_ sender: Any) {
         showSafariVC(for: "https://www.wikihow.com/Play-Minesweeper")
