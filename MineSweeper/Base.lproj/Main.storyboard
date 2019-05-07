@@ -50,10 +50,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UbH-aa-2VY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="64Q-rv-bQE"/>
+                            <constraint firstItem="UbH-aa-2VY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="BUm-4I-tts"/>
+                            <constraint firstItem="UbH-aa-2VY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bhj-pe-arD"/>
+                            <constraint firstItem="UbH-aa-2VY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EAJ-PQ-sVR"/>
                             <constraint firstItem="UbH-aa-2VY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="L3v-Al-bCA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UbH-aa-2VY" secondAttribute="trailing" id="oSS-JY-awo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UbH-aa-2VY" secondAttribute="bottom" id="oVJ-Vf-lv7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
