@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="2646" y="130"/>
         </scene>
-        <!--View Controller-->
+        <!--menuViewController-->
         <scene sceneID="hKH-Xd-6NP">
             <objects>
-                <viewController id="kyT-hS-sqZ" sceneMemberID="viewController">
+                <viewController title="menuViewController" id="kyT-hS-sqZ" customClass="menuViewController" customModule="MineSweeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8jU-kL-Dsk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +128,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bUW-tW-0Bh"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hjK-sO-hg1"/>
+                    <navigationItem key="navigationItem" id="hjK-sO-hg1">
+                        <barButtonItem key="rightBarButtonItem" title="Help" id="Udy-rn-0kC">
+                            <connections>
+                                <action selector="menuHelpButton:" destination="kyT-hS-sqZ" id="Rdg-rk-wxA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Bq-mH-85i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
