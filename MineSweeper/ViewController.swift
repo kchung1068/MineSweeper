@@ -30,7 +30,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet var collectionView: UICollectionView!
     
-   
+    
     
     
     
@@ -43,7 +43,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         youLose.addAction(youLoseAction)
-    } //test
+    
+       let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+       // layout.itemSize = CGSize(width: 20, height: 20)
+        collectionView.collectionViewLayout = layout
+
+    
+    
+    
+    }
+    
+    
+    
+    
+    
     
     @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
         print("erg")
@@ -58,6 +74,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
     }
-
+    
 }
 
