@@ -10,7 +10,7 @@ import UIKit
 import SafariServices
 
 class menuViewController: UIViewController {
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class menuViewController: UIViewController {
         
         present(safariMenuVC, animated: true, completion: nil)
     }
- 
+    
 }
 
 
