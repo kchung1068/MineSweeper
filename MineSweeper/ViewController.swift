@@ -28,6 +28,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     let randomNumber = Int.random(in: 0 ... 99)
     
+    
+    
     @IBOutlet var collectionView: UICollectionView!
     
    
@@ -43,10 +45,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         youLose.addAction(youLoseAction)
-    } //test
+    }
     
     @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
         print("erg")
+        present(youLose, animated: true, completion: nil) 
     }
     
     @IBAction func helpButton(_ sender: Any) {
