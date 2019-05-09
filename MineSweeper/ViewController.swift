@@ -14,9 +14,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-            cell.cellImageView.image = UIImage(named: "blankBox")
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!
+            CollectionViewCell
+        cell.cellImageView.image = UIImage(named: "blankBox")
+        cell.backgroundColor = .blue
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
         
         return cell
@@ -61,7 +62,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         youLose.addAction(youLoseAction)
+    
+       
+
+    
+    
+    
     }
+    
+    
+    
+    
+    
     
     @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
         print("erg")
