@@ -12,7 +12,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet var cellImageView: UIImageView!
-    @IBOutlet var cellLabel: UILabel!
+//    @IBOutlet var cellLabel: UILabel!
     
 
     
