@@ -19,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.cellImageView.image = UIImage(named: "blankBox")
         cell.backgroundColor = .blue
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
-        
+        cell.tag = indexPath.row
         return cell
         
     }
