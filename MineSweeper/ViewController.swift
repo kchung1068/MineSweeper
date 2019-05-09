@@ -10,7 +10,7 @@ import UIKit
 import SafariServices
 import MapKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -19,8 +19,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.cellImageView.image = UIImage(named: "blankBox")
         cell.backgroundColor = .blue
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
+        
         return cell
+        
     }
+    
+   
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(numbers.count)
         return numbers.count
