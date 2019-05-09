@@ -88,6 +88,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="UbH-aa-2VY" id="Sgg-bn-GNw"/>
+                        <outlet property="collectionViewTwo" destination="Xvz-5n-aTa" id="sEr-D0-aKU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
