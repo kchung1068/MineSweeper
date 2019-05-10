@@ -12,6 +12,8 @@ import MapKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    var cells: [CollectionViewCell] = []
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!
@@ -23,6 +25,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if cell.alpha == 0.0 {
             print(cell.tag)
         }
+        if cell.tag == 73 {
+            cell.cellImageView.image = UIImage(named: "1")
+        }
+        
         return cell
         
     }
