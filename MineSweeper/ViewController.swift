@@ -19,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!
             CollectionViewCell
-        cell.cellImageView.image = UIImage(named: "blankBox")
+        cell.cellImageView.image = UIImage(named: "1")
         cell.backgroundColor = .blue
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
         cell.tag = indexPath.row
