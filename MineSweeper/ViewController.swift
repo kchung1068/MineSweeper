@@ -23,6 +23,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.backgroundColor = .blue
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
         cell.tag = indexPath.row
+        if cell.alpha == 0.0 {
+            print(cell.tag)
+        }
         return cell
         
         
@@ -43,6 +46,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @objc func tap(sender: UITapGestureRecognizer){
         print("erg")
+        
         present(youLose, animated: true, completion: nil)
     }
     
