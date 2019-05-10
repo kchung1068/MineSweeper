@@ -13,7 +13,10 @@ import MapKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+       
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!
             CollectionViewCell
         cell.cellImageView.image = UIImage(named: "blankBox")
@@ -21,6 +24,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
         cell.tag = indexPath.row
         return cell
+        
+        
+        
         
     }
     
