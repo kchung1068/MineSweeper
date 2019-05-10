@@ -13,6 +13,12 @@ class soundManager{
     
     var audioPlayer: AVAudioPlayer?
     
+    enum SoundEffect {
+        
+        case explode
+        
+    }
+    
     func playSound() {
         
     }
