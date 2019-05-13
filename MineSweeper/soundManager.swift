@@ -14,12 +14,28 @@ class soundManager{
     var audioPlayer: AVAudioPlayer?
     
     enum SoundEffect {
-        
-        case explode
-        
+
     }
     
-    func playSound() {
+    func playSound(_ effect:SoundEffect) {
+        
+        let soundFileName = " "
+        
+        let bundlePath = Bundle.main.path(forResource: soundFileName, ofType: "mp3")
+        
+        guard bundlePath != nil else{
+            print("Couldn't find sound file \(soundFileName) in the bundle")
+            return
+        }
+        let soundURL = URL(fileURLWithPath: bundlePath!)
+        do{
+            audioPlayer =  try AVAudioPlayer(contentsOf: soundURL)
+            
+            audioPlayer?.play()
+        }
+        catch{
+            print("Couldn't create the audio player objectt for sound file \(soundFileName)")
+        }
         
     }
     
