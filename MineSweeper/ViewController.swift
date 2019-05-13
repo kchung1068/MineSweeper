@@ -28,7 +28,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if cell.alpha == 0.0 {
             print(cell.tag)
         }
-        if cell.tag == 73 {
+        if cell.tag == 73 {
             cell.cellImageView.image = UIImage(named: "1")
         }
         
