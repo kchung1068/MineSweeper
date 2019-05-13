@@ -19,7 +19,9 @@ class soundManager{
         
     }
     
-    func playSound() {
+    func playSound(_ effect:SoundEffect) {
+        
+        var soundFileName = " "
         
     }
     
