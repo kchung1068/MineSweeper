@@ -101,6 +101,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
     }
+    @IBAction func randomimage(sender: AnyObject)
+    {
+        //list of Images in array
+//        let image : NSArray = [ UIImage(named: "1.jpg")!,
+//                                UIImage(named: "2.jpg")!,
+//                                UIImage(named: "3.jpg")!,
+//                                UIImage(named: "4.jpg")!,
+//                                UIImage(named: "5.jpg")!,
+//                                UIImage(named: "6.jpg")!,
+//                                UIImage(named: "7.jpg")!]
+        
+        //random image generating method
+//        let imagerange: UInt32 = UInt32(image.count)
+//        let randomimage = Int(arc4random_uniform(imagerange))
+//        let generatedimage: AnyObject = image.object(at: randomimage) as AnyObject
+//        self.myimage.image = generatedimage as? UIImage
+    }
     
 }
 
