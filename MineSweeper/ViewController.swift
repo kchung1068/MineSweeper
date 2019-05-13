@@ -13,6 +13,7 @@ import MapKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var cells: [CollectionViewCell] = []
+    let arrays: [String] = ["1", "2", "3"]
     
     
     
@@ -24,6 +25,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.cellImageView.image = UIImage(named: "1")
         cell.backgroundColor = .blue
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
+        if indexPath.row % 3 == 0 {
+            cell.cellImageView.image = UIImage(named: arrays[0])
+        } else if indexPath.row % 3 == 1 {
+            cell.cellImageView.image = UIImage(named: arrays[1])
+        } else if indexPath.row % 3 == 2 {
+            cell.cellImageView.image = UIImage(named: arrays[2])
+        }
+        
         cell.tag = indexPath.row
         if cell.alpha == 0.0 {
             print(cell.tag)
