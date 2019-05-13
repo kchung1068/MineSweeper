@@ -24,7 +24,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             CollectionViewCell
         cell.cellImageView.image = UIImage(named: "1")
         cell.backgroundColor = .blue
-        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
+
         if indexPath.row % 3 == 0 {
             cell.cellImageView.image = UIImage(named: arrays[0])
         } else if indexPath.row % 3 == 1 {
@@ -57,6 +57,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
+        print("erg")
+        
+        present(youLose, animated: true, completion: nil)
     }
     
     @objc func tap(sender: UITapGestureRecognizer){
