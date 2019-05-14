@@ -13,7 +13,7 @@ import MapKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var cells: [CollectionViewCell] = []
-    let arrays: [String] = ["1", "2", "3"]
+    let arrays: [String] = ["1", "2", "3", "", "" ,"" ,"", "", "", "", ""]
     
     
     
@@ -26,11 +26,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.backgroundColor = .blue
 
         if indexPath.row % 3 == 0 {
-            cell.cellImageView.image = UIImage(named: arrays[0])
+            cell.cellImageView.image = UIImage(named: arrays[3])
         } else if indexPath.row % 3 == 1 {
-            cell.cellImageView.image = UIImage(named: arrays[1])
+            cell.cellImageView.image = UIImage(named: arrays[3])
         } else if indexPath.row % 3 == 2 {
-            cell.cellImageView.image = UIImage(named: arrays[2])
+            cell.cellImageView.image = UIImage(named: arrays[3])
         }
         
         cell.tag = indexPath.row
@@ -56,7 +56,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.c
+        
+        if indexPath.row == 55 {
+            collectionView.cellForItem(at: indexPath)
+        }
         print(indexPath)
+        print(indexPath.section)
+        print(indexPath.row)
         print("erg")
         
         present(youLose, animated: true, completion: nil)
