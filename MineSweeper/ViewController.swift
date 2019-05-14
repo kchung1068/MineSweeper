@@ -14,7 +14,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var cells: [CollectionViewCell] = []
     let arrays: [String] = ["1", "2", "3"]
-    
+   // var soundManager = soundManager()
+    //uncommnet the line above and add soundManager.playsound(.explode)
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

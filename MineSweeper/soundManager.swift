@@ -14,12 +14,21 @@ class soundManager{
     var audioPlayer: AVAudioPlayer?
     
     enum SoundEffect {
-
+        
+        case destroy
+        
     }
     
     func playSound(_ effect:SoundEffect) {
         
-        let soundFileName = " "
+        var soundFileName = " "
+        
+        switch effect {
+        case .destroy:
+            soundFileName = "explosion"
+        default:
+            soundFileName = ""
+        }
         
         let bundlePath = Bundle.main.path(forResource: soundFileName, ofType: "mp3")
         
