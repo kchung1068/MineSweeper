@@ -13,6 +13,9 @@ import MapKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var cells: [CollectionViewCell] = []
+    let arrays: [String] = ["1", "2", "3"]
+   // var soundManager = soundManager()
+    //uncommnet the line above and add soundManager.playsound(.explode)
     let arrays: [String] = ["1", "2", "3", "", "" ,"" ,"", "", "", "", ""]
     
     
@@ -120,6 +123,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
     }
+   
+    
+    
     
 }
 
