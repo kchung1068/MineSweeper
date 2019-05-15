@@ -43,7 +43,7 @@ class soundManager{
             audioPlayer?.play()
         }
         catch{
-            print("Couldn't create the audio player objectt for sound file \(soundFileName)")
+            print("Couldn't create the audio player object for sound file \(soundFileName)")
         }
         
     }

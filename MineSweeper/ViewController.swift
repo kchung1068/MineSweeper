@@ -13,7 +13,7 @@ import MapKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var cells: [CollectionViewCell] = []
-    let arrays: [String] = ["1", "2", "3"]
+    
    // var soundManager = soundManager()
     //uncommnet the line above and add soundManager.playsound(.explode)
     let arrays: [String] = ["1", "2", "3", "", "" ,"" ,"", "", "", "", ""]
@@ -29,11 +29,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.backgroundColor = .blue
 
         if indexPath.row % 3 == 0 {
-            cell.cellImageView.image = UIImage(named: arrays[3])
+            cell.cellImageView.image = UIImage()
         } else if indexPath.row % 3 == 1 {
-            cell.cellImageView.image = UIImage(named: arrays[3])
+            cell.cellImageView.image = UIImage()
         } else if indexPath.row % 3 == 2 {
-            cell.cellImageView.image = UIImage(named: arrays[3])
+            cell.cellImageView.image = UIImage()
         }
         
         cell.tag = indexPath.row
@@ -59,7 +59,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.c
+        let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        currentCell.cellImageView.image = UIImage(named: "2")
         
         if indexPath.row == 55 {
             collectionView.cellForItem(at: indexPath)
