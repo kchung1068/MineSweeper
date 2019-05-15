@@ -57,7 +57,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     @objc func tap(sender: UITapGestureRecognizer){
-        print("erg")
+        // print("erg")
        // collectionView.alpha = 0
         
       //  present(youLose, animated: true, completion: nil)
