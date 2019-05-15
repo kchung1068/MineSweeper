@@ -23,7 +23,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!
             CollectionViewCell 
-        cell.cellImageView.image = UIImage(named: "1")
+        cell.cellImageView.image = UIImage()
         cell.backgroundColor = .blue
 
         if indexPath.row % 3 == 0 {
@@ -35,9 +35,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         cell.tag = indexPath.row
-        if cell.tag == 73 {
-            cell.cellImageView.image = UIImage(named: "1")
-        }
+        
         
         return cell
         
