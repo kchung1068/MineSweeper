@@ -22,10 +22,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!
-            CollectionViewCell 
-        cell.cellImageView.image = UIImage()
-        cell.backgroundColor = .blue
+            CollectionViewCell
+        cell.backgroundColor = .darkGray
+        cell.cellImageView.image = UIImage(named: "1")
+        
 
+        
+        
         if indexPath.row % 3 == 0 {
             cell.cellImageView.image = UIImage()
         } else if indexPath.row % 3 == 1 {
@@ -63,8 +66,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
        
         currentCell.cellImageView.image = UIImage(named: "2")
         
-        
-        
+        let row = indexPath.row
+        if arrays.elementsEqual(row) {
+            <#code#>
+        }
+        if row == 0 && row == 1 && row == 2 {
+            currentCell.cellImageView.image = UIImage(named: arrays[0])
+        }
         print(indexPath)
         print(indexPath.section)
         print(indexPath.row)
