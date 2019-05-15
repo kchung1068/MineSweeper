@@ -14,6 +14,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var cells: [CollectionViewCell] = []
     let arrays: [String] = ["1", "2", "3"]
+   // var soundManager = soundManager()
+    //uncommnet the line above and add soundManager.playsound(.explode)
+
     
     
     
@@ -24,11 +27,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.backgroundColor = .blue
 
         if indexPath.row % 3 == 0 {
-            cell.cellImageView.image = UIImage(named: arrays[0])
+            cell.cellImageView.image = UIImage(named: arrays[3])
         } else if indexPath.row % 3 == 1 {
-            cell.cellImageView.image = UIImage(named: arrays[1])
+            cell.cellImageView.image = UIImage(named: arrays[3])
         } else if indexPath.row % 3 == 2 {
-            cell.cellImageView.image = UIImage(named: arrays[2])
+            cell.cellImageView.image = UIImage(named: arrays[3])
         }
         
         cell.tag = indexPath.row
@@ -50,7 +53,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        
+        if indexPath.row == 55 {
+            collectionView.cellForItem(at: indexPath)
+        }
         print(indexPath)
+        print(indexPath.section)
+        print(indexPath.row)
         print("erg")
         
         present(youLose, animated: true, completion: nil)
@@ -108,23 +118,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
     }
-    @IBAction func randomimage(sender: AnyObject)
-    {
-        //list of Images in array
-//        let image : NSArray = [ UIImage(named: "1.jpg")!,
-//                                UIImage(named: "2.jpg")!,
-//                                UIImage(named: "3.jpg")!,
-//                                UIImage(named: "4.jpg")!,
-//                                UIImage(named: "5.jpg")!,
-//                                UIImage(named: "6.jpg")!,
-//                                UIImage(named: "7.jpg")!]
-        
-        //random image generating method
-//        let imagerange: UInt32 = UInt32(image.count)
-//        let randomimage = Int(arc4random_uniform(imagerange))
-//        let generatedimage: AnyObject = image.object(at: randomimage) as AnyObject
-//        self.myimage.image = generatedimage as? UIImage
-    }
+   
+    
+    
     
 }
 
