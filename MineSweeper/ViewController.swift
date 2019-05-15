@@ -16,7 +16,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
    // var soundManager = soundManager()
     //uncommnet the line above and add soundManager.playsound(.explode)
-
+    let arrays: [String] = ["blank", "blank", "blank", "1", "Bomb" ,"1" ,"blank", "blank", "blank", "blank", "1", "1","blank","1","1","1","blank","blank","blank","blank","Bomb","2","1","blank","blank","1","1","1","blank","blank","2","Bomb","1","blank","blank","1","Bomb","1","blank","blank","1","1","1","1","1","2","1","1","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1"]
     
     
     
@@ -62,7 +62,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         print(indexPath.row)
         print("erg")
         
-        present(youLose, animated: true, completion: nil)
+       // present(youLose, animated: true, completion: nil)
     }
     
     @objc func tap(sender: UITapGestureRecognizer){
@@ -87,15 +87,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     
-    let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
-    let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
+    //let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
+    //let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        youLose.addAction(youLoseAction)
+       // youLose.addAction(youLoseAction)
     }
     
     
@@ -105,7 +105,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
         print("erg")
-        present(youLose, animated: true, completion: nil) 
+       // present(youLose, animated: true, completion: nil)
     }
     
     @IBAction func helpButton(_ sender: Any) {
