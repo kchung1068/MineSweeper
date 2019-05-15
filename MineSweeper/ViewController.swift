@@ -26,6 +26,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.cellImageView.image = UIImage(named: "1")
         cell.backgroundColor = .blue
 
+        
+        
         if indexPath.row % 3 == 0 {
             cell.cellImageView.image = UIImage()
         } else if indexPath.row % 3 == 1 {
@@ -35,9 +37,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         cell.tag = indexPath.row
-        if cell.tag == 73 {
-            cell.cellImageView.image = UIImage(named: "1")
-        }
+        
         
         return cell
         
@@ -54,10 +54,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
-        currentCell.cellImageView.image = UIImage(named: "2")
         
-        if indexPath.row == 55 {
-            collectionView.cellForItem(at: indexPath)
+        let row = indexPath.row
+        if arrays.elementsEqual(row) {
+            <#code#>
+        }
+        if row == 0 && row == 1 && row == 2 {
+            currentCell.cellImageView.image = UIImage(named: arrays[0])
         }
         print(indexPath)
         print(indexPath.section)
