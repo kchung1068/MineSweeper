@@ -52,11 +52,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+       
+        
+        if indexPath.row == 1 {
+            currentCell.cellImageView.image = UIImage(named: "blank")
+        }
+        if indexPath.row == 2 {
+            currentCell.cellImageView.image = UIImage(named: "blank")
+        }
+       
         currentCell.cellImageView.image = UIImage(named: "2")
         
-        if indexPath.row == 55 {
-            collectionView.cellForItem(at: indexPath)
-        }
+        
+        
         print(indexPath)
         print(indexPath.section)
         print(indexPath.row)
