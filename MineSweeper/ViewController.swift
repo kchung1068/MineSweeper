@@ -22,9 +22,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!
-            CollectionViewCell 
+            CollectionViewCell
+        cell.backgroundColor = .darkGray
         cell.cellImageView.image = UIImage(named: "1")
-        cell.backgroundColor = .blue
+        
 
         if indexPath.row % 3 == 0 {
             cell.cellImageView.image = UIImage()
