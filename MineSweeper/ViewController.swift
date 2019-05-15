@@ -16,7 +16,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     let arrays: [String] = ["1", "2", "3"]
    // var soundManager = soundManager()
     //uncommnet the line above and add soundManager.playsound(.explode)
-    let arrays: [String] = ["1", "2", "3", "", "" ,"" ,"", "", "", "", ""]
+
     
     
     
@@ -59,7 +59,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.c
+
         
         if indexPath.row == 55 {
             collectionView.cellForItem(at: indexPath)
