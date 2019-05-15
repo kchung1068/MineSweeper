@@ -67,12 +67,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         currentCell.cellImageView.image = UIImage(named: "2")
         
         let row = indexPath.row
-        if arrays.elementsEqual(row) {
-            <#code#>
-        }
-        if row == 0 && row == 1 && row == 2 {
-            currentCell.cellImageView.image = UIImage(named: arrays[0])
-        }
+       
+        
         print(indexPath)
         print(indexPath.section)
         print(indexPath.row)
