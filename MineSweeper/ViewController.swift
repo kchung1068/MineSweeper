@@ -18,7 +18,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     //uncommnet the line above and add soundManager.playsound(.explode)
     let arrays: [String] = ["blank", "blank", "blank", "1", "Bomb" ,"1" ,"blank", "blank", "blank", "blank", "1", "1","blank","1","1","1","blank","blank","blank","blank","Bomb","2","1","blank","blank","1","1","1","blank","blank","2","Bomb","1","blank","blank","1","Bomb","1","blank","blank","1","1","1","1","1","2","1","1","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1"]
     
-    
+    //tag of the cell
+    //whats in the array
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!
@@ -49,27 +50,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(numbers.count)
+        //print(numbers.count)
         return numbers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        print(currentCell.tag)
+        print(arrays[currentCell.tag])
+        let formula = UIImage(named: arrays[currentCell.tag])
+        currentCell.cellImageView.image = formula
         
-        for item in arrays {
-            currentCell.cellImageView.image = UIImage(named: arrays[randomNumber])
-        }
-        
-        let row = indexPath.row
-       
-        
-        if row == 0 && row == 1 && row == 2 {
-            currentCell.cellImageView.image = UIImage(named: arrays[0])
-        }
-        print(indexPath)
-        print(indexPath.section)
-        print(indexPath.row)
-        print("erg")
         
        // present(youLose, animated: true, completion: nil)
     }
@@ -113,7 +105,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
-        print("erg")
+        
        // present(youLose, animated: true, completion: nil)
     }
     
