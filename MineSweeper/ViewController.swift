@@ -56,10 +56,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
         
-        let row = indexPath.row
-        if arrays.elementsEqual(row) {
-            <#code#>
+        for item in arrays {
+            currentCell.cellImageView.image = UIImage(named: arrays[randomNumber])
         }
+        
+        let row = indexPath.row
+        
         if row == 0 && row == 1 && row == 2 {
             currentCell.cellImageView.image = UIImage(named: arrays[0])
         }
