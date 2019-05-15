@@ -64,7 +64,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         print(indexPath.row)
         print("erg")
         
-        present(youLose, animated: true, completion: nil)
+       // present(youLose, animated: true, completion: nil)
     }
     
     @objc func tap(sender: UITapGestureRecognizer){
@@ -97,7 +97,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        youLose.addAction(youLoseAction)
+       // youLose.addAction(youLoseAction)
     }
     
     
@@ -107,7 +107,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
         print("erg")
-        present(youLose, animated: true, completion: nil) 
+       // present(youLose, animated: true, completion: nil)
     }
     
     @IBAction func helpButton(_ sender: Any) {
