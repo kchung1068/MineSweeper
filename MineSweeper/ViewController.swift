@@ -89,8 +89,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     
-    let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
-    let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
+    //let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
+    //let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
     
     
     override func viewDidLoad() {
