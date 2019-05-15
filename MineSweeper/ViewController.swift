@@ -13,7 +13,7 @@ import MapKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var cells: [CollectionViewCell] = []
-    let arrays: [String] = ["1", "2", "3"]
+    
    // var soundManager = soundManager()
     //uncommnet the line above and add soundManager.playsound(.explode)
     let arrays: [String] = ["blank", "blank", "blank", "1", "Bomb" ,"1" ,"blank", "blank", "blank", "blank", "1", "1","blank","1","1","1","blank","blank","blank","blank","Bomb","2","1","blank","blank","1","1","1","blank","blank","2","Bomb","1","blank","blank","1","Bomb","1","blank","blank","1","1","1","1","1","2","1","1","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1"]
@@ -21,31 +21,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-       
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!
-            CollectionViewCell
+         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!
+            CollectionViewCell 
         cell.cellImageView.image = UIImage(named: "1")
         cell.backgroundColor = .blue
 
         if indexPath.row % 3 == 0 {
-            cell.cellImageView.image = UIImage(named: arrays[3])
+            cell.cellImageView.image = UIImage()
         } else if indexPath.row % 3 == 1 {
-            cell.cellImageView.image = UIImage(named: arrays[3])
+            cell.cellImageView.image = UIImage()
         } else if indexPath.row % 3 == 2 {
-            cell.cellImageView.image = UIImage(named: arrays[3])
+            cell.cellImageView.image = UIImage()
         }
         
         cell.tag = indexPath.row
-        if cell.alpha == 0.0 {
-            print(cell.tag)
-        }
-        if cell.tag == 73 {
+        if cell.tag == 73 {
             cell.cellImageView.image = UIImage(named: "1")
         }
         
         return cell
-        
         
         
         
@@ -59,7 +53,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.c
+        let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        currentCell.cellImageView.image = UIImage(named: "2")
         
         if indexPath.row == 55 {
             collectionView.cellForItem(at: indexPath)
@@ -73,9 +68,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     @objc func tap(sender: UITapGestureRecognizer){
-        print("erg")
+        // print("erg")
+       // collectionView.alpha = 0
         
-        present(youLose, animated: true, completion: nil)
+      //  present(youLose, animated: true, completion: nil)
     }
     
     var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100]
