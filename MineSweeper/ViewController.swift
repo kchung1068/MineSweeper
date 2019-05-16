@@ -85,7 +85,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewTwo: UICollectionView!
     
-    
+
     
     
     //let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
@@ -105,7 +105,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
-        
+       
        // present(youLose, animated: true, completion: nil)
     }
     
