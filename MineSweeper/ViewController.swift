@@ -85,11 +85,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewTwo: UICollectionView!
     
+     {
+    let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
+    let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
     
+   // let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
+   // let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
+    }
     
-    
-    //let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
-    //let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
     
     
     override func viewDidLoad() {
@@ -99,6 +102,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
        // youLose.addAction(youLoseAction)
     }
     
+ 
+    
     
     
     
@@ -106,7 +111,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
         
-       // present(youLose, animated: true, completion: nil)
+     //   present(youLose, animated: true, completion: nil)
     }
     
     @IBAction func helpButton(_ sender: Any) {
