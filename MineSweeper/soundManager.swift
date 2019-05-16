@@ -27,7 +27,7 @@ class soundManager{
         case .destroy:
             soundFileName = "explosion"
         default:
-            soundFileName = ""
+            soundFileName = " "
         }
         
         let bundlePath = Bundle.main.path(forResource: soundFileName, ofType: "mp3")

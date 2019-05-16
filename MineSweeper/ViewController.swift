@@ -110,8 +110,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
-        
-     //   present(youLose, animated: true, completion: nil)
+       
+       // present(youLose, animated: true, completion: nil)
     }
     
     @IBAction func helpButton(_ sender: Any) {
