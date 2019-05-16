@@ -61,10 +61,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         print(arrays[currentCell.tag])
         let formula = UIImage(named: arrays[currentCell.tag])
         currentCell.cellImageView.image = formula
-        
+        if (arrays[currentCell.tag]) == String("Bomb"){ print("here")
+            
+                let alert = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(okAction)
+                present(alert,animated: true,completion: nil)
+        }
         
        // present(youLose, animated: true, completion: nil)
     }
+    
     
     @objc func tap(sender: UITapGestureRecognizer){
         // print("erg")
@@ -85,13 +92,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewTwo: UICollectionView!
     
-    if cell == {
+    
     let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
     let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
     
-   // let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
-   // let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
-    }
+   
+    
     
     
     
@@ -100,6 +106,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
        // youLose.addAction(youLoseAction)
+    
+       
+            
+        
+    
+    
+    
     }
     
  
