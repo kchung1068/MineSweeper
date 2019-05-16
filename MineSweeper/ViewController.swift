@@ -85,7 +85,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewTwo: UICollectionView!
     
-     {
+    if cell == {
     let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
     let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
     
