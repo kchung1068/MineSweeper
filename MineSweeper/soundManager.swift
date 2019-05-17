@@ -15,7 +15,7 @@ class soundManager{
     
     enum SoundEffect {
         
-        case destroy
+        case explode
         
     }
     
@@ -24,7 +24,7 @@ class soundManager{
         var soundFileName = " "
         
         switch effect {
-        case .destroy:
+        case .explode:
             soundFileName = "explosion"
         default:
             soundFileName = " "

@@ -14,7 +14,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var cells: [CollectionViewCell] = []
     
-   // var soundManager = soundManager()
+    var sManager = soundManager()
     //uncommnet the line above and add soundManager.playsound(.explode)
     let arrays: [String] = ["blank", "blank", "blank", "1", "Bomb" ,"1" ,"blank", "blank", "blank", "blank", "1", "1","blank","1","1","1","blank","blank","blank","blank","Bomb","2","1","blank","blank","1","1","1","blank","blank","2","Bomb","1","blank","blank","1","Bomb","1","blank","blank","1","1","1","1","1","2","1","1","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1"]
     
@@ -62,6 +62,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let formula = UIImage(named: arrays[currentCell.tag])
         currentCell.cellImageView.image = formula
         if (arrays[currentCell.tag]) == String("Bomb"){ print("here")
+            
+            sManager.playSound(.explode)
             
                 let alert = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
