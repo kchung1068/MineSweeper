@@ -65,8 +65,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             sManager.playSound(.explode)
             
-                let alert = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                let alert = UIAlertController(title: "You Lose, Better Luck Next Time", message: nil, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
                 alert.addAction(okAction)
                 present(alert,animated: true,completion: nil)
         }
