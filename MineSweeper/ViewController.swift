@@ -15,7 +15,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var cells: [CollectionViewCell] = []
     
     var sManager = soundManager()
-    //uncommnet the line above and add soundManager.playsound(.explode)
+
     let arrays: [String] = ["blank", "blank", "blank", "1", "Bomb" ,"1" ,"blank", "blank", "blank", "blank", "1", "1","blank","1","1","1","blank","blank","blank","blank","Bomb","2","1","blank","blank","1","1","1","blank","blank","2","Bomb","1","blank","blank","1","Bomb","1","blank","blank","1","1","1","1","1","2","1","1","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1"]
     
     //tag of the cell
@@ -95,8 +95,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet var collectionViewTwo: UICollectionView!
     
     
-    let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
-    let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
+    //let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
+    //let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
     
     
     
