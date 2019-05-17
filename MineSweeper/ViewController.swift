@@ -68,6 +68,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 alert.addAction(okAction)
                 present(alert,animated: true,completion: nil)
         }
+        if (arrays[currentCell.tag]) == String("1"){
+            print("Zach is cool")
+        }
         
        // present(youLose, animated: true, completion: nil)
     }
