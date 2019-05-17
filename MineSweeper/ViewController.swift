@@ -63,6 +63,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         currentCell.cellImageView.image = formula
         
         
+        
        // present(youLose, animated: true, completion: nil)
     }
     
