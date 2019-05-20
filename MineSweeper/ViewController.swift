@@ -70,10 +70,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             alert.addAction(okAction)
             present(alert,animated: true,completion: nil)
         }
-        if (arrays[currentCell.tag]) == String("1"){
+        let leftTag = currentCell.tag - 1
+        let leftImage = UIImage(named: arrays[leftTag])
+        
+        let rightTag = currentCell.tag + 1
+        let rightImage = UIImage(named: arrays[rightTag])
+        
+        if (arrays[currentCell.tag] ) == String("1"){
             print("Zach is cool")
         }
         
+        func kyle() -> String {
+            if currentCell.tag % 10 == 0 {
+                let adjacentCells = currentCell.tag - 1
+            }
+            return arrays[8]
+        }
         
     }
     
