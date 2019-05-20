@@ -17,7 +17,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var sManager = soundManager()
     //uncommnet the line above and add soundManager.playsound(.explode)
     let arrays: [String] = ["blank", "blank", "blank", "1", "Bomb" ,"1" ,"blank", "blank", "blank", "blank", "1", "1","blank","1","1","1","blank","blank","blank","blank","Bomb","2","1","blank","blank","1","1","1","blank","blank","2","Bomb","1","blank","blank","1","Bomb","1","blank","blank","1","1","1","1","1","2","1","1","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1"]
-    let blankBoxArray: [String] = ["blankBox", "blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox"]
+    let blankBoxArray: [String] = ["blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox"]
     
     //tag of the cell
     //whats in the array
@@ -26,11 +26,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!
             CollectionViewCell
         cell.backgroundColor = .darkGray
-        cell.cellImageView.image = UIImage(named: "1")
-        
-
-        
-        
         if indexPath.row % 3 == 0 {
             cell.cellImageView.image = UIImage()
         } else if indexPath.row % 3 == 1 {
@@ -38,114 +33,76 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         } else if indexPath.row % 3 == 2 {
             cell.cellImageView.image = UIImage()
         }
-        
         cell.tag = indexPath.row
-        
-        
         return cell
-        
-        
-        
     }
-    
-   
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //print(numbers.count)
         return numbers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
         print(currentCell.tag)
         print(arrays[currentCell.tag])
         let formula = UIImage(named: arrays[currentCell.tag])
         currentCell.cellImageView.image = formula
-        if (arrays[currentCell.tag]) == String("Bomb"){ 
-            
+        if (arrays[currentCell.tag]) == String("Bomb"){
             sManager.playSound(.explode)
-            
                 let alert = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
-            
             let okAction = UIAlertAction(title: "Ok", style: .destructive) { (lose) in
-                
-                currentCell.cellImageView.image = UIImage(named: self.blankBoxArray[currentCell.tag])
+                let bring = UIImage(named: "blankBox")
+                currentCell.cellImageView.image = bring
             }
                 alert.addAction(okAction)
                 present(alert,animated: true,completion: nil)
         }
+        if currentCell.tag == 13 && currentCell.cellImageView.image == UIImage(named: "1") {
+            
+        }
         
-       
-    }
-    
-    
-    @objc func tap(sender: UITapGestureRecognizer){
-        // print("erg")
-       // collectionView.alpha = 0
+        if currentCell.cellImageView.image == UIImage(named: "1") {
+            
+        }
+        if currentCell.cellImageView.image == UIImage(named: "2") {
+            
+        }
+        if currentCell.cellImageView.image == UIImage(named: "3") {
+            
+        }
+        currentCell.frame(forAlignmentRect: CGRect(x: <#T##Double#>, y: <#T##Double#>, width: <#T##Double#>, height: <#T##Double#>))
         
-      
+        
+        
     }
-    
+    func around(currentCell: CollectionViewCell) {
+        
+    }
+    func top(currentCell: CollectionViewCell) {
+        
+    }
     var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100]
     
     var hundred = 100
-    
-    
     let randomNumber = Int.random(in: 0 ... 99)
-    
-    
-    
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var collectionViewTwo: UICollectionView!
-    
-    
-    let youLose = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
-    let youLoseAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
-    
-   
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
        // youLose.addAction(youLoseAction)
-    
-       
-            
-        
-    
-    
-    
     }
     
- 
-    
-    
-    
-    
-    
-    
-    @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
-       
-       // present(youLose, animated: true, completion: nil)
-    }
     
     @IBAction func helpButton(_ sender: Any) {
         showSafariVC(for: "https://www.wikihow.com/Play-Minesweeper")
     }
-    
     func showSafariVC(for url: String) {
         guard let url = URL(string: url) else {return}
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
     }
    
-    
-    
-    
 }
 
