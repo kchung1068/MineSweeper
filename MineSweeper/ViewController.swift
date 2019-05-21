@@ -64,6 +64,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let okAction = UIAlertAction(title: "Restart", style: .destructive, handler: nil)
             alert.addAction(okAction)
             present(alert,animated: true,completion: nil)
+            print(findAdjacentNumvers(selected: 5, indexPath: indexPath))
         }
         
         
@@ -115,15 +116,33 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let downLeftImage = UIImage(named: arrays[downLeftTag])
         
         
-        if currentCell.tag % 10 == 0 {
-            
-        }
+        
         if currentCell.tag % 10 == 9 && currentCell.tag != 9 && currentCell.tag != 99 {
             return [upTag, upLeftTag, leftTag, downLeftTag, downTag]
-        } else {
-        return [rightTag, leftTag]
         }
+        else if currentCell.tag % 10 == 0 && currentCell.tag != 0 && currentCell.tag != 90 {
+            return[rightTag, downRightTag, downTag, upTag, upRightTag]
+        }
+        else if currentCell.tag > 0 && currentCell.tag < 9 {
+            return[rightTag,leftTag,downLeftTag,downRightTag,downTag]
+        } else if currentCell.tag == 0 {
+            return[rightTag, downRightTag,downTag]
+        } else if currentCell.tag == 9 {
+            return[leftTag,downLeftTag,downTag]
+        } else if currentCell.tag > 90 && currentCell.tag < 100 {
+            return[leftTag, upLeftTag, upTag, upRightTag, rightTag]
+        } else if currentCell.tag == 90 {
+            return[upTag, upRightTag, rightTag]
+        } else if currentCell.tag == 99 {
+            return[upTag, upLeftTag, leftTag]
+        } else {
+        return [rightTag, leftTag, upLeftTag, upRightTag, downRightTag,downLeftTag,downRightTag]
+        }
+        
     }
+    
+    
+    
     @objc func tap(sender: UITapGestureRecognizer){
         // print("erg")
         // collectionView.alpha = 0
