@@ -14,6 +14,8 @@
 		2E18500E227A2AEE00218995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E18500C227A2AEE00218995 /* LaunchScreen.storyboard */; };
 		2E6ABC832280C38F00CF0BA8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6ABC822280C38F00CF0BA8 /* CollectionViewCell.swift */; };
 		CF7BAE3222836443006AC69B /* menuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BAE3122836443006AC69B /* menuViewController.swift */; };
+		CFB627B622948FBF00A87AD2 /* mediumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB627B522948FBF00A87AD2 /* mediumViewController.swift */; };
+		CFB627B822948FE700A87AD2 /* hardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB627B722948FE700A87AD2 /* hardViewController.swift */; };
 		CFE4AACA22860BD9007D7BBF /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFE4AAC922860BD9007D7BBF /* explosion.mp3 */; };
 		CFE4AACD22860C28007D7BBF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE4AACC22860C28007D7BBF /* AVFoundation.framework */; };
 		CFE4AACF22860C8E007D7BBF /* soundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE4AACE22860C8E007D7BBF /* soundManager.swift */; };
@@ -29,6 +31,8 @@
 		2E18500F227A2AEE00218995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E6ABC822280C38F00CF0BA8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		CF7BAE3122836443006AC69B /* menuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuViewController.swift; sourceTree = "<group>"; };
+		CFB627B522948FBF00A87AD2 /* mediumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mediumViewController.swift; sourceTree = "<group>"; };
+		CFB627B722948FE700A87AD2 /* hardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hardViewController.swift; sourceTree = "<group>"; };
 		CFE4AAC922860BD9007D7BBF /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
 		CFE4AACC22860C28007D7BBF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CFE4AACE22860C8E007D7BBF /* soundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soundManager.swift; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 				2E185007227A2AED00218995 /* Main.storyboard */,
 				CF7BAE3122836443006AC69B /* menuViewController.swift */,
 				2E185005227A2AED00218995 /* ViewController.swift */,
+				CFB627B522948FBF00A87AD2 /* mediumViewController.swift */,
+				CFB627B722948FE700A87AD2 /* hardViewController.swift */,
 				2E6ABC822280C38F00CF0BA8 /* CollectionViewCell.swift */,
 				CFE4AACE22860C8E007D7BBF /* soundManager.swift */,
 				2E18500A227A2AEE00218995 /* Assets.xcassets */,
@@ -168,7 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFB627B822948FE700A87AD2 /* hardViewController.swift in Sources */,
 				2E185006227A2AED00218995 /* ViewController.swift in Sources */,
+				CFB627B622948FBF00A87AD2 /* mediumViewController.swift in Sources */,
 				2E185004227A2AED00218995 /* AppDelegate.swift in Sources */,
 				2E6ABC832280C38F00CF0BA8 /* CollectionViewCell.swift in Sources */,
 				CF7BAE3222836443006AC69B /* menuViewController.swift in Sources */,
