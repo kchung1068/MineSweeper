@@ -64,6 +64,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let okAction = UIAlertAction(title: "Restart", style: .destructive, handler: nil)
             alert.addAction(okAction)
             present(alert,animated: true,completion: nil)
+            print(findAdjacentNumvers(selected: 5, indexPath: indexPath))
         }
         
         
@@ -115,11 +116,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let downLeftImage = UIImage(named: arrays[downLeftTag])
         
         
-        if currentCell.tag % 10 == 0 {
-            
-        }
-        return [rightTag, leftTag]
+        if currentCell.tag % 10 == 0 && currentCell.tag != 0 && currentCell.tag != 90 {
+            return[rightTag, downRightTag, downTag, upTag, upRightTag]
+        } 
+        return [rightTag, leftTag, upLeftTag, upRightTag, downRightTag,downLeftTag,downRightTag]
     }
+    
+    
+    
     @objc func tap(sender: UITapGestureRecognizer){
         // print("erg")
         // collectionView.alpha = 0
