@@ -14,6 +14,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var cells: [CollectionViewCell] = []
     
+    
     var sManager = soundManager()
 
     let arrays: [String] = ["blank", "blank", "blank", "1", "Bomb" ,"1" ,"blank", "blank", "blank", "blank", "1", "1","blank","1","1","1","blank","blank","blank","blank","Bomb","2","1","blank","blank","1","1","1","blank","blank","2","Bomb","1","blank","blank","1","Bomb","1","blank","blank","1","1","1","1","1","2","1","1","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1"]
@@ -44,6 +45,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //print(numbers.count)
         return numbers.count
@@ -63,16 +65,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             alert.addAction(okAction)
             present(alert,animated: true,completion: nil)
         }
-        let leftTag = currentCell.tag - 1
-        let leftImage = UIImage(named: arrays[leftTag])
         
-        let rightTag = currentCell.tag + 1
-        let rightImage = UIImage(named: arrays[rightTag])
+        
+        
         
         if (arrays[currentCell.tag] ) == String("1"){
             print("Zach is cool")
         }
-        
+    
         func kyle() -> String {
             if currentCell.tag % 10 == 0 {
                 let adjacentCells = currentCell.tag - 1
@@ -81,12 +81,45 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 let bring = UIImage(named: "blankBox")
                 currentCell.cellImageView.image = bring
             }
-            return arrays[8]
+            
         }
-        
+        return arrays[8]
+    }
     }
     
     
+    func findAdjacentNumvers(selected: Int, indexPath: IndexPath) -> [Int]  {
+        let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        let leftTag = currentCell.tag - 1
+        let leftImage = UIImage(named: arrays[leftTag])
+        
+        let rightTag = currentCell.tag + 1
+        let rightImage = UIImage(named: arrays[rightTag])
+        
+        let upLeftTag = currentCell.tag - 11
+        let upLeftImage = UIImage(named: arrays[upLeftTag])
+        
+        let upRightTag = currentCell.tag - 9
+        let upRightImage = UIImage(named: arrays[upRightTag])
+        
+        let upTag = currentCell.tag - 10
+        let upImage = UIImage(named: arrays[upTag])
+        
+        let downTag = currentCell.tag + 10
+        let downImage = UIImage(named: arrays[downTag])
+        
+        let downRightTag = currentCell.tag + 11
+        let downRightImage = UIImage(named: arrays[downRightTag])
+        
+        let downLeftTag = currentCell.tag + 9
+        let downLeftImage = UIImage(named: arrays[downLeftTag])
+        
+        
+        if currentCell.tag % 10 == 0 {
+            
+        }
+        return [rightTag, leftTag]
+    }
     @objc func tap(sender: UITapGestureRecognizer){
         // print("erg")
         // collectionView.alpha = 0
@@ -149,4 +182,5 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
 }
+
 
