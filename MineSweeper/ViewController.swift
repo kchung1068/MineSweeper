@@ -121,6 +121,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             return [upTag, upLeftTag, leftTag, downLeftTag, downTag]
         } else if currentCell.tag % 10 == 0 && currentCell.tag != 0 && currentCell.tag != 90 {
             return[rightTag, downRightTag, downTag, upTag, upRightTag]
+        } else if currentCell.tag > 90 && currentCell.tag < 100 {
+            return[leftTag, upLeftTag, upTag, upRightTag, rightTag]
+        } else if currentCell.tag == 90 {
+            return[upTag, upRightTag, rightTag]
+        } else if currentCell.tag == 99 {
+            return[upTag, upLeftTag, leftTag]
         } else {
         return [rightTag, leftTag, upLeftTag, upRightTag, downRightTag,downLeftTag,downRightTag]
         }
