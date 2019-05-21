@@ -118,7 +118,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if currentCell.tag % 10 == 0 {
             
         }
+        if currentCell.tag % 10 == 9 && currentCell.tag != 9 && currentCell.tag != 99 {
+            return [upTag, upLeftTag, leftTag, downLeftTag, downTag]
+        } else {
         return [rightTag, leftTag]
+        }
     }
     @objc func tap(sender: UITapGestureRecognizer){
         // print("erg")
