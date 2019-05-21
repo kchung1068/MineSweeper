@@ -116,6 +116,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let downLeftImage = UIImage(named: arrays[downLeftTag])
         
         
+        if currentCell.tag % 10 == 0 {
+            
+        }
+        if currentCell.tag % 10 == 9 && currentCell.tag != 9 && currentCell.tag != 99 {
+            return [upTag, upLeftTag, leftTag, downLeftTag, downTag]
+        } else {
+        return [rightTag, leftTag]
+        }
         if currentCell.tag % 10 == 0 && currentCell.tag != 0 && currentCell.tag != 90 {
             return[rightTag, downRightTag, downTag, upTag, upRightTag]
         } 
