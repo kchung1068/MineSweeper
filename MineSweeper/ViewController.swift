@@ -119,11 +119,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         if currentCell.tag % 10 == 9 && currentCell.tag != 9 && currentCell.tag != 99 {
             return [upTag, upLeftTag, leftTag, downLeftTag, downTag]
-        } else if currentCell.tag % 10 == 0 && currentCell.tag != 0 && currentCell.tag != 90 {
-            return[rightTag, downRightTag, downTag, upTag, upRightTag]
-        } else {
-        return [rightTag, leftTag, upLeftTag, upRightTag, downRightTag,downLeftTag,downRightTag]
         }
+        else if currentCell.tag % 10 == 0 && currentCell.tag != 0 && currentCell.tag != 90 {
+            return[rightTag, downRightTag, downTag, upTag, upRightTag]
+        }
+        else if currentCell.tag > 0 && currentCell.tag < 9 {
+            return[rightTag,leftTag,downLeftTag,downRightTag,downTag]
+        } else if currentCell.tag == 0 {
+            return[rightTag, downRightTag,downTag]
+        } else if currentCell.tag == 9 {
+            return[leftTag,downLeftTag,downTag]
+        }
+        else {
+            return [rightTag, leftTag, upLeftTag, upRightTag, downRightTag,downLeftTag,downRightTag]
+        }
+        
     }
     
     
