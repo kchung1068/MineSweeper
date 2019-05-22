@@ -37,12 +37,11 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YT2-5F-zDS">
                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <gestureRecognizers/>
-                                        <size key="customSize" width="40" height="40"/>
                                         <connections>
                                             <outlet property="cellImageView" destination="YT2-5F-zDS" id="TOn-lm-qDT"/>
                                         </connections>
