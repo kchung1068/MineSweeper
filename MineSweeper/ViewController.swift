@@ -69,11 +69,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let okAction = UIAlertAction(title: "Restart", style: .destructive, handler: nil)
             alert.addAction(okAction)
             present(alert,animated: true,completion: nil)
+        
+        
         }
         if (arrays[currentCell.tag]) == String("1"){
             print("Zach is cool")
         }
-        
+       
+       
         
     }
     
@@ -110,21 +113,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        // youLose.addAction(youLoseAction)
         
-        
-        
-        
-        
-        
-        
+       
     }
-    
-    
-    
-    
-    
-    
+        
+        
+        
     
     
     @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
