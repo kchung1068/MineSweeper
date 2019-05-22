@@ -28,10 +28,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         CollectionViewCell
         cell.backgroundColor = .darkGray
         cell.cellImageView.image = UIImage(named: "1")
-        
-        
-        
-        
         if indexPath.row % 3 == 0 {
             cell.cellImageView.image = UIImage()
         } else if indexPath.row % 3 == 1 {
@@ -57,6 +53,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         print(arrays[currentCell.tag])
         let formula = UIImage(named: arrays[currentCell.tag])
         currentCell.cellImageView.image = formula
+        print(findAdjacentNumbers(selected: currentCell.tag, indexPath: indexPath))
         if (arrays[currentCell.tag]) == String("Bomb"){
             sManager.playSound(.explode)
             
@@ -64,9 +61,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let okAction = UIAlertAction(title: "Restart", style: .destructive, handler: nil)
             alert.addAction(okAction)
             present(alert,animated: true,completion: nil)
-        
-        
-            print(findAdjacentNumvers(selected: 5, indexPath: indexPath))
+            
         }
         
         
@@ -91,54 +86,86 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     
-    func findAdjacentNumvers(selected: Int, indexPath: IndexPath) -> [Int]  {
+    func findAdjacentNumbers(selected: Int, indexPath: IndexPath) -> [Int]  {
         let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
         let leftTag = currentCell.tag - 1
-        let leftImage = UIImage(named: arrays[leftTag])
+        
         
         let rightTag = currentCell.tag + 1
-        let rightImage = UIImage(named: arrays[rightTag])
+        
         
         let upLeftTag = currentCell.tag - 11
-        let upLeftImage = UIImage(named: arrays[upLeftTag])
+        
         
         let upRightTag = currentCell.tag - 9
-        let upRightImage = UIImage(named: arrays[upRightTag])
+        
         
         let upTag = currentCell.tag - 10
-        let upImage = UIImage(named: arrays[upTag])
+        
         
         let downTag = currentCell.tag + 10
-        let downImage = UIImage(named: arrays[downTag])
+      
         
         let downRightTag = currentCell.tag + 11
-        let downRightImage = UIImage(named: arrays[downRightTag])
+        
         
         let downLeftTag = currentCell.tag + 9
-        let downLeftImage = UIImage(named: arrays[downLeftTag])
+        
         
         
         
         if currentCell.tag % 10 == 9 && currentCell.tag != 9 && currentCell.tag != 99 {
+            let upImage = UIImage(named: arrays[upTag])
+            let upLeftImage = UIImage(named: arrays[upLeftTag])
+             let leftImage = UIImage(named: arrays[leftTag])
+            let downLeftImage = UIImage(named: arrays[downLeftTag])
+            let downImage = UIImage(named: arrays[downTag])
             return [upTag, upLeftTag, leftTag, downLeftTag, downTag]
         }
         else if currentCell.tag % 10 == 0 && currentCell.tag != 0 && currentCell.tag != 90 {
+            let rightImage = UIImage(named: arrays[rightTag])
+            let downRightImage = UIImage(named: arrays[downRightTag])
+             let downImage = UIImage(named: arrays[downTag])
+            let upImage = UIImage(named: arrays[upTag])
+            let upRightImage = UIImage(named: arrays[upRightTag])
             return[rightTag, downRightTag, downTag, upTag, upRightTag]
         }
         else if currentCell.tag > 0 && currentCell.tag < 9 {
+            let rightImage = UIImage(named: arrays[rightTag])
+            let leftImage = UIImage(named: arrays[leftTag])
+            let downLeftImage = UIImage(named: arrays[downLeftTag])
+            let downRightImage = UIImage(named: arrays[downRightTag])
+            let downImage = UIImage(named: arrays[downTag])
             return[rightTag,leftTag,downLeftTag,downRightTag,downTag]
         } else if currentCell.tag == 0 {
+            let rightImage = UIImage(named: arrays[rightTag])
+            let downRightImage = UIImage(named: arrays[downRightTag])
+            let downImage = UIImage(named: arrays[downTag])
             return[rightTag, downRightTag,downTag]
         } else if currentCell.tag == 9 {
+            let leftImage = UIImage(named: arrays[leftTag])
+            let downLeftImage = UIImage(named: arrays[downLeftTag])
+            let downImage = UIImage(named: arrays[downTag])
             return[leftTag,downLeftTag,downTag]
         } else if currentCell.tag > 90 && currentCell.tag < 100 {
+            let leftImage = UIImage(named: arrays[leftTag])
+            let upLeftImage = UIImage(named: arrays[upLeftTag])
+            let upImage = UIImage(named: arrays[upTag])
+            let upRightImage = UIImage(named: arrays[upRightTag])
+            let rightImage = UIImage(named: arrays[rightTag])
             return[leftTag, upLeftTag, upTag, upRightTag, rightTag]
         } else if currentCell.tag == 90 {
+            let upImage = UIImage(named: arrays[upTag])
+            let upRightImage = UIImage(named: arrays[upRightTag])
+            let rightImage = UIImage(named: arrays[rightTag])
             return[upTag, upRightTag, rightTag]
         } else if currentCell.tag == 99 {
+            let upImage = UIImage(named: arrays[upTag])
+            let upLeftImage = UIImage(named: arrays[upLeftTag])
+            let leftImage = UIImage(named: arrays[leftTag])
             return[upTag, upLeftTag, leftTag]
         } else {
-        return [rightTag, leftTag, upLeftTag, upRightTag, downRightTag,downLeftTag,downRightTag]
+        return [rightTag, leftTag, upLeftTag, upRightTag, upTag, downRightTag,downLeftTag,downRightTag]
         }
         
     }
