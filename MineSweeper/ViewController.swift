@@ -62,6 +62,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             let alert = UIAlertController(title: "You Lose, Better Luck Next Time", message: nil, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Restart", style: .destructive, handler: nil)
+            let newAction = UIAlertAction(title: "restart", style: .default) { (coolio) in
+                self.performSegue(withIdentifier: "coolio", sender: nil)
+            }
+            
             alert.addAction(okAction)
             present(alert,animated: true,completion: nil)
             print(findAdjacentNumvers(selected: 5, indexPath: indexPath))
@@ -92,28 +96,28 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func findAdjacentNumvers(selected: Int, indexPath: IndexPath) -> [Int]  {
         let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
         let leftTag = currentCell.tag - 1
-        let leftImage = UIImage(named: arrays[leftTag])
+       // let leftImage = UIImage(named: arrays[leftTag])
         
         let rightTag = currentCell.tag + 1
-        let rightImage = UIImage(named: arrays[rightTag])
+       // let rightImage = UIImage(named: arrays[rightTag])
         
         let upLeftTag = currentCell.tag - 11
-        let upLeftImage = UIImage(named: arrays[upLeftTag])
+       // let upLeftImage = UIImage(named: arrays[upLeftTag])
         
         let upRightTag = currentCell.tag - 9
-        let upRightImage = UIImage(named: arrays[upRightTag])
+       // let upRightImage = UIImage(named: arrays[upRightTag])
         
         let upTag = currentCell.tag - 10
-        let upImage = UIImage(named: arrays[upTag])
+       // let upImage = UIImage(named: arrays[upTag])
         
         let downTag = currentCell.tag + 10
-        let downImage = UIImage(named: arrays[downTag])
+       // let downImage = UIImage(named: arrays[downTag])
         
         let downRightTag = currentCell.tag + 11
-        let downRightImage = UIImage(named: arrays[downRightTag])
+       // let downRightImage = UIImage(named: arrays[downRightTag])
         
         let downLeftTag = currentCell.tag + 9
-        let downLeftImage = UIImage(named: arrays[downLeftTag])
+       // let downLeftImage = UIImage(named: arrays[downLeftTag])
         
         
         
