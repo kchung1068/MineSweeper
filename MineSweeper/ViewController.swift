@@ -173,7 +173,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     @objc func tap(sender: UITapGestureRecognizer){
-        // print("erg")
+        
         // collectionView.alpha = 0
         
         
