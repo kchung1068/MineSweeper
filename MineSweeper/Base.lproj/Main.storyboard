@@ -101,6 +101,9 @@
                                 <state key="normal" title="Medium">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="MLb-ea-Y6U" kind="show" id="UAT-Ax-GDc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaW-QE-YfY">
                                 <rect key="frame" x="152" y="637" width="110" height="61"/>
@@ -110,6 +113,9 @@
                                 <state key="normal" title="Hard">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="SBW-no-3xJ" kind="show" id="3Ba-Io-s2m"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMB-J4-dqn">
                                 <rect key="frame" x="152" y="418" width="110" height="61"/>
@@ -138,6 +144,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Bq-mH-85i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1921.7391304347827" y="129.91071428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QPg-cC-M7p">
+            <objects>
+                <viewController id="MLb-ea-Y6U" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4YH-5O-m2g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="B18-Jw-UtB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iuj-AU-lIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1922" y="-585"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GEI-FX-uNl">
+            <objects>
+                <viewController id="SBW-no-3xJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pAV-GB-7cf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Zha-hp-uZc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CHL-wd-71c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1922" y="883"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Aj-yD-2cz">
