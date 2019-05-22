@@ -58,7 +58,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             sManager.playSound(.explode)
             
             let alert = UIAlertController(title: "You Lose, Better Luck Next Time", message: nil, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Restart", style: .destructive, handler: nil)
+            let okAction = UIAlertAction(title: "Restart", style: .destructive) { (restart) in
+                currentCell.cellImageView.image = UIImage(named: "blankBox")
+            }
+            
             alert.addAction(okAction)
             present(alert,animated: true,completion: nil)
             
@@ -71,18 +74,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             print("Zach is cool")
         }
     
-        func kyle() -> String {
-            if currentCell.tag % 10 == 0 {
-                let adjacentCells = currentCell.tag - 1
-                let alert = UIAlertController(title: "You Lose", message: nil, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .destructive) { (lose) in
-                let bring = UIImage(named: "blankBox")
-                currentCell.cellImageView.image = bring
-            }
-            
-        }
-        return arrays[8]
-    }
+        
+       
+    
     }
     
     
@@ -147,7 +141,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let downLeftImage = UIImage(named: arrays[downLeftTag])
             let downImage = UIImage(named: arrays[downTag])
             return[leftTag,downLeftTag,downTag]
-        } else if currentCell.tag > 90 && currentCell.tag < 100 {
+        } else if currentCell.tag > 90 && currentCell.tag < 99 {
             let leftImage = UIImage(named: arrays[leftTag])
             let upLeftImage = UIImage(named: arrays[upLeftTag])
             let upImage = UIImage(named: arrays[upTag])
