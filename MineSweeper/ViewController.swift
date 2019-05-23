@@ -70,7 +70,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             sManager.playSound(.explode)
             
             let alert = UIAlertController(title: "You Lose, Better Luck Next Time", message: nil, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Restart", style: .destructive) { (restart) in
+            let okAction = UIAlertAction(title: "ok", style: .destructive) { (restart) in
                 currentCell.cellImageView.image = UIImage(named: "blankBox")
             }
             
@@ -85,6 +85,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if (arrays[currentCell.tag] ) == String("1"){
             print("Zach is cool")
         }
+        
+
     
         
        
@@ -179,7 +181,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     @objc func tap(sender: UITapGestureRecognizer){
-        // print("erg")
+        
         // collectionView.alpha = 0
         
         
@@ -251,5 +253,4 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
 }
-
 
