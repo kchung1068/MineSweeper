@@ -55,6 +55,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         currentCell.cellImageView.image = formula
         print(findAdjacentNumbers(selected: currentCell.tag, indexPath: indexPath))
         let aroundArray = findAdjacentNumbers(selected: currentCell.tag, indexPath: indexPath)
+        
         for number in aroundArray {
             if currentCell.cellImageView.image == UIImage(named: "blank") {
                 if arrays[number] == "Bomb" {
