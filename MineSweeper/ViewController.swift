@@ -17,7 +17,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var sManager = soundManager()
 
-    let arrays: [String] = ["blank", "blank", "blank", "1", "Bomb" ,"1" ,"blank", "blank", "blank", "blank", "1", "1","blank","1","1","1","blank","blank","blank","blank","Bomb","2","1","blank","blank","1","1","1","blank","blank","2","Bomb","1","blank","blank","1","Bomb","1","blank","blank","1","1","1","1","1","2","1","1","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1"]
+    let arrays: [String] = ["blank", "blank", "blank", "1", "Bomb" ,"1" ,"blank", "blank", "blank", "blank", "1","1","blank","1","1","1","blank","blank","blank","blank","Bomb","2","1","blank","blank","1","1","1","blank","blank","2","Bomb","1","blank","blank","1","Bomb","1","blank","blank","1","1","1","1","1","2","1","1","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1"]
     let blankBoxArray: [String] = ["blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox"]
     
     //tag of the cell
@@ -56,17 +56,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         print(findAdjacentNumbers(selected: currentCell.tag, indexPath: indexPath))
         let aroundArray = findAdjacentNumbers(selected: currentCell.tag, indexPath: indexPath)
         
+        if currentCell.cellImageView.image == UIImage(named: "blank") {
         for number in aroundArray {
-            if currentCell.cellImageView.image == UIImage(named: "blank") {
-                if arrays[number] == "Bomb" {
-                    
-                } else if arrays[number] == "1" {
-                    currentCell.cellImageView.image = UIImage(named: arrays[number])
-                }
+            
+            
             }
-        }
-        
-        if (arrays[currentCell.tag]) == String("Bomb"){
+        } else if currentCell.cellImageView.image == UIImage(named: "Bomb") {
             sManager.playSound(.explode)
             
             let alert = UIAlertController(title: "You Lose, Better Luck Next Time", message: nil, preferredStyle: .alert)
@@ -76,8 +71,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             alert.addAction(okAction)
             present(alert,animated: true,completion: nil)
-            
+        } else if currentCell.cellImageView.image == UIImage(named: "1") || currentCell.cellImageView.image == UIImage(named: "2") || currentCell.cellImageView.image == UIImage(named: "3") {
+            print("")
         }
+        
+    
+        
         
         
         
@@ -92,7 +91,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
        
     
     }
-    
+
     
     func findAdjacentNumbers(selected: Int, indexPath: IndexPath) -> [Int]  {
         let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
