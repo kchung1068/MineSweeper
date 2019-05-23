@@ -60,6 +60,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             if currentCell.cellImageView.image == UIImage(named: "blank") {
                 if arrays[number] == "Bomb" {
                     
+                } else if arrays[number] == "1" {
+                    currentCell.cellImageView.image = UIImage(named: arrays[number])
                 }
             }
         }
