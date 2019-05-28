@@ -66,11 +66,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             if UIImage(named: arrays[number]) == UIImage(named: "Bomb") {
                 print("")
             } else {
-                let nearbyCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
-                nearbyCell.cellImageView.image = UIImage(named: arrays[number])
+                let currentIndexPath = IndexPath(row: number, section: 0)
+              let nearbyCell = collectionView.cellForItem(at: currentIndexPath) as! CollectionViewCell
+                let ideal = UIImage(named: arrays[currentIndexPath.row])
+             nearbyCell.cellImageView.image = ideal
+                    
+                }
                 
-                
-            }
+//                nearbyCell.cellImageView.image = UIImage(named: arrays[number])
+
+//                func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+//
+
+
+
+
+
+            
             
             }
         } else if currentCell.cellImageView.image == UIImage(named: "Bomb") {
@@ -171,7 +183,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let leftImage = UIImage(named: arrays[leftTag])
             return[upTag, upLeftTag, leftTag]
         } else {
-        return [rightTag, leftTag, upLeftTag, upRightTag, upTag, downRightTag,downLeftTag,downRightTag]
+        return [rightTag, leftTag, upLeftTag, upRightTag, upTag, downRightTag,downLeftTag,downRightTag, downTag]
         }
         
 }
