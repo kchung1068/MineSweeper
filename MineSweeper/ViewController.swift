@@ -61,9 +61,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let aroundArray = findAdjacentNumbers(selected: currentCell.tag, indexPath: indexPath)
         
         if currentCell.cellImageView.image == UIImage(named: "blank") {
-        for number in aroundArray {
-            
-            
+            for number in aroundArray {
+                
+                
             }
         } else if currentCell.cellImageView.image == UIImage(named: "Bomb") {
             sManager.playSound(.explode)
@@ -82,7 +82,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             print("Zach is cool")
         }
     }
-
+    
     func findAdjacentNumbers(selected: Int, indexPath: IndexPath) -> [Int]  {
         let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
         let leftTag = currentCell.tag - 1
@@ -101,7 +101,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         
         let downTag = currentCell.tag + 10
-      
+        
         
         let downRightTag = currentCell.tag + 11
         
@@ -114,7 +114,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if currentCell.tag % 10 == 9 && currentCell.tag != 9 && currentCell.tag != 99 {
             let upImage = UIImage(named: arrays[upTag])
             let upLeftImage = UIImage(named: arrays[upLeftTag])
-             let leftImage = UIImage(named: arrays[leftTag])
+            let leftImage = UIImage(named: arrays[leftTag])
             let downLeftImage = UIImage(named: arrays[downLeftTag])
             let downImage = UIImage(named: arrays[downTag])
             return [upTag, upLeftTag, leftTag, downLeftTag, downTag]
@@ -122,7 +122,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         else if currentCell.tag % 10 == 0 && currentCell.tag != 0 && currentCell.tag != 90 {
             let rightImage = UIImage(named: arrays[rightTag])
             let downRightImage = UIImage(named: arrays[downRightTag])
-             let downImage = UIImage(named: arrays[downTag])
+            let downImage = UIImage(named: arrays[downTag])
             let upImage = UIImage(named: arrays[upTag])
             let upRightImage = UIImage(named: arrays[upRightTag])
             return[rightTag, downRightTag, downTag, upTag, upRightTag]
@@ -162,10 +162,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let leftImage = UIImage(named: arrays[leftTag])
             return[upTag, upLeftTag, leftTag]
         } else {
-        return [rightTag, leftTag, upLeftTag, upRightTag, upTag, downRightTag,downLeftTag,downRightTag]
+            return [rightTag, leftTag, upLeftTag, upRightTag, upTag, downRightTag,downLeftTag,downRightTag]
         }
         
-}
+    }
     
     
     
@@ -196,7 +196,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         
-       
+        
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let yourWidth = collectionView.bounds.width/10.5
@@ -216,11 +216,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
-
-
-
-        
-        
+    
+    
+    
+    
+    
     
     
     @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
@@ -236,10 +236,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
     }
-        
-        
-        
-        
+    
+    
+    
+    
 }
 
 
