@@ -70,45 +70,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             let alert = UIAlertController(title: "You Lose, Better Luck Next Time", message: nil, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "ok", style: .destructive) { (restart) in
-                currentCell.cellImageView.image = UIImage(named: "blankBox")
                 let okAction = UIAlertAction(title: "Restart", style: .destructive, handler: nil)
-                let newAction = UIAlertAction(title: "restart", style: .default) { (coolio) in
-                    self.performSegue(withIdentifier: "coolio", sender: nil)
-                }
-                
-                
-                alert.addAction(newAction)
-                self.present(alert,animated: true,completion: nil)
-                
+                currentCell.cellImageView.image = UIImage(named: "blankBox")
             }
-            if (arrays[currentCell.tag] ) == String("1"){
-                print("Zach is cool")
-            }
-            
             alert.addAction(okAction)
             present(alert,animated: true,completion: nil)
         } else if currentCell.cellImageView.image == UIImage(named: "1") || currentCell.cellImageView.image == UIImage(named: "2") || currentCell.cellImageView.image == UIImage(named: "3") {
             print("")
         }
-        
-    
-        
-        
-        
-        
-        
         if (arrays[currentCell.tag] ) == String("1"){
             print("Zach is cool")
         }
-        
-
-    
-        
-       
-    
     }
 
-    
     func findAdjacentNumbers(selected: Int, indexPath: IndexPath) -> [Int]  {
         let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
         let leftTag = currentCell.tag - 1
