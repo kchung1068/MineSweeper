@@ -59,13 +59,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if currentCell.cellImageView.image == UIImage(named: "blank") {
         for number in aroundArray {
             
+            if UIImage(named: arrays[number]) == UIImage(named: "Bomb") {
+                print("")
+            } else {
+                let nearbyCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+                nearbyCell.cellImageView.image = UIImage(named: arrays[number])
+                
+                
+            }
             
             }
         } else if currentCell.cellImageView.image == UIImage(named: "Bomb") {
             sManager.playSound(.explode)
-            
             let alert = UIAlertController(title: "You Lose, Better Luck Next Time", message: nil, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "ok", style: .destructive) { (restart) in
+                self.performSegue(withIdentifier: "coolio", sender: nil)
                 currentCell.cellImageView.image = UIImage(named: "blankBox")
             }
             
@@ -75,20 +83,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             print("")
         }
         
-    
-        
-        
-        
-        
-        
         if (arrays[currentCell.tag] ) == String("1"){
             print("Zach is cool")
         }
-        
-
-    
-        
-       
     
     }
 
