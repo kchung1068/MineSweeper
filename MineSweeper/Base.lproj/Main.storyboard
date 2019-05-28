@@ -48,12 +48,12 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdg-lz-226">
-                                <rect key="frame" x="184" y="775" width="46" height="30"/>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYq-Re-StQ">
+                                <rect key="frame" x="184" y="738" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="kyT-hS-sqZ" kind="show" identifier="coolio" id="d23-hq-HcG"/>
+                                    <segue destination="kyT-hS-sqZ" kind="show" identifier="coolio" id="htP-bp-ZiA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -133,7 +133,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="coolio" id="hgc-2d-dUW"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="hgc-2d-dUW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -202,6 +202,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="d23-hq-HcG"/>
+        <segue reference="htP-bp-ZiA"/>
     </inferredMetricsTieBreakers>
 </document>
