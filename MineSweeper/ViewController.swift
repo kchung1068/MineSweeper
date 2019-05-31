@@ -303,7 +303,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
     }
-    /*var isWon =
+    
+    func chechGameEnd(){
+        
+        var message: String
+        var title: String
+    
+let isWon = true
     
     
     if isWon == true{
@@ -323,7 +329,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     title = "Game Over"
     message = " You've lost"
     }
-    showAlert(title, message)
+        showAlert(title, message)
 }
 
 func showAlert(_ title:String, _ message:String){
@@ -334,10 +340,12 @@ func showAlert(_ title:String, _ message:String){
     
     alert.addAction(alertAction)
     
-    present(alert, animated: true, completion: nil)*/
+    present(alert, animated: true, completion: nil)
+    
 }
     
 
 
 
 
+}
