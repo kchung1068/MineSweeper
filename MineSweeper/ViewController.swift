@@ -219,7 +219,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let leftImage = UIImage(named: arrays[leftTag])
             return[upTag, upLeftTag, leftTag]
         } else {
-            return [rightTag, leftTag, upLeftTag, upRightTag, upTag, downRightTag,downLeftTag,downRightTag]
+            return [rightTag, leftTag, upLeftTag, upRightTag, upTag, downRightTag,downLeftTag,downRightTag, downTag]
         }
         
     }
