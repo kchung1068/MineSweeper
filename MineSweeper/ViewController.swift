@@ -63,7 +63,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let seconds = String(format: "%.2f", millisceonds/1000)
         
-        timerLabel.text = "Time Remaining \(seconds)"
+        timerLabel.text = "Time Remaining: \(seconds)"
         
         if millisceonds <= 0 {
             
@@ -255,6 +255,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self , selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
+        
         for i in 0...9 {
             
             blankBoxArray.insert("bomb", at: Int(arc4random_uniform(UInt32(blankBoxArray.count))))
@@ -300,11 +303,41 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
     }
+    /*var isWon =
     
     
+    if isWon == true{
+    if millisceonds > 0 {
+    
+    timer?.invalidate()}
+    
+    title = "Congratulations!"
+    message = " You've Won"
     
     
+    }else{
+    
+    if millisceonds > 0 {
+    return
+    }
+    title = "Game Over"
+    message = " You've lost"
+    }
+    showAlert(title, message)
 }
+
+func showAlert(_ title:String, _ message:String){
+    
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    
+    let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+    
+    alert.addAction(alertAction)
+    
+    present(alert, animated: true, completion: nil)*/
+}
+    
+
 
 
 
