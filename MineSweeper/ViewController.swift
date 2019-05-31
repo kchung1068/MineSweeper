@@ -69,10 +69,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 let currentIndexPath = IndexPath(row: number, section: 0)
               let nearbyCell = collectionView.cellForItem(at: currentIndexPath) as! CollectionViewCell
                 let ideal = UIImage(named: arrays[currentIndexPath.row])
+                if currentCell.isSelected == true {
              nearbyCell.cellImageView.image = ideal
-                    
+                } else {
+                    print("")
                 }
-                
+                }
+            
 //                nearbyCell.cellImageView.image = UIImage(named: arrays[number])
 
 //                func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
