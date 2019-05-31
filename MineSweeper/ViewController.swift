@@ -67,11 +67,30 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if currentCell.cellImageView.image == UIImage(named: "blank") {
         for number in aroundArray {
             
+            if UIImage(named: arrays[number]) == UIImage(named: "Bomb") {
+                print("")
+            } else {
+                let currentIndexPath = IndexPath(row: number, section: 0)
+              let nearbyCell = collectionView.cellForItem(at: currentIndexPath) as! CollectionViewCell
+                let ideal = UIImage(named: arrays[currentIndexPath.row])
+             nearbyCell.cellImageView.image = ideal
+                    
+                }
+                
+//                nearbyCell.cellImageView.image = UIImage(named: arrays[number])
+
+//                func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+//
+
+
+
+
+
+            
             
             }
         } else if currentCell.cellImageView.image == UIImage(named: "Bomb") {
             sManager.playSound(.explode)
-            
             let alert = UIAlertController(title: "You Lose, Better Luck Next Time", message: nil, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "ok", style: .destructive) { (restart) in
                 let okAction = UIAlertAction(title: "Restart", style: .destructive, handler: nil)
@@ -82,9 +101,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         } else if currentCell.cellImageView.image == UIImage(named: "1") || currentCell.cellImageView.image == UIImage(named: "2") || currentCell.cellImageView.image == UIImage(named: "3") {
             print("")
         }
+        
         if (arrays[currentCell.tag] ) == String("1"){
             print("Zach is cool")
         }
+    
     }
 
     func findAdjacentNumbers(selected: Int, indexPath: IndexPath) -> [Int]  {
@@ -166,7 +187,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let leftImage = UIImage(named: arrays[leftTag])
             return[upTag, upLeftTag, leftTag]
         } else {
-        return [rightTag, leftTag, upLeftTag, upRightTag, upTag, downRightTag,downLeftTag,downRightTag]
+        return [rightTag, leftTag, upLeftTag, upRightTag, upTag, downRightTag,downLeftTag,downRightTag, downTag]
         }
         
 }
