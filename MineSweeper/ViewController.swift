@@ -27,9 +27,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
 
     var arrays: [String] = ["blank", "blank", "blank", "1", "Bomb" ,"1" ,"blank", "blank", "blank", "blank", "1", "1","blank","1","1","1","blank","blank","blank","blank","Bomb","2","1","blank","blank","1","1","1","blank","blank","2","Bomb","1","blank","blank","1","Bomb","1","blank","blank","1","1","1","1","1","2","1","1","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1"]
-    
-    
-    let blankBoxArray: [String] = ["blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox"]
+    var blankBoxArray: [String] = ["blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox","blankBox"]
     
     //tag of the cell
     //whats in the array
@@ -233,6 +231,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var hundred = 100
     let randomNumber = Int.random(in: 0 ... 99)
+    
+    
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewTwo: UICollectionView!
     
@@ -250,7 +250,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        for i in 0...9 {
+            
+            blankBoxArray.insert("bomb", at: Int(arc4random_uniform(UInt32(blankBoxArray.count))))
         
+        }
+        print(blankBoxArray)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let yourWidth = collectionView.bounds.width/10.5
