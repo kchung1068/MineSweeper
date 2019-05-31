@@ -303,10 +303,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
     }
-    //var isWon =
+    /*var isWon =
     
     
-    //if isWon == true{
+    if isWon == true{
     if millisceonds > 0 {
     
     timer?.invalidate()}
@@ -334,7 +334,7 @@ func showAlert(_ title:String, _ message:String){
     
     alert.addAction(alertAction)
     
-    //present(alert, animated: true, completion: nil)
+    present(alert, animated: true, completion: nil)*/
 }
     
 
