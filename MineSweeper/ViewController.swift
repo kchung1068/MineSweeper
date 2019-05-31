@@ -11,13 +11,20 @@ import SafariServices
 import MapKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+    
+    
 {
     
     var cells: [CollectionViewCell] = []
     
+    var timer:Timer?
+    var millisceonds:Float = 60 * 1000 
+    
     var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100]
     
     var sManager = soundManager()
+    
+    let arrays: [String] = ["blank", "blank", "blank", "1", "Bomb" ,"1" ,"blank", "blank", "blank", "blank", "1", "1","blank","1","1","1","blank","blank","blank","blank","Bomb","2","1","blank","blank","1","1","1","blank","blank","2","Bomb","1","blank","blank","1","Bomb","1","blank","blank","1","1","1","1","1","2","1","1","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1"]
 
     var arrays: [String] = ["blank", "blank", "blank", "1", "Bomb" ,"1" ,"blank", "blank", "blank", "blank", "1", "1","blank","1","1","1","blank","blank","blank","blank","Bomb","2","1","blank","blank","1","1","1","blank","blank","2","Bomb","1","blank","blank","1","Bomb","1","blank","blank","1","1","1","1","1","2","1","1","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","blank","1","1","1","blank","blank","blank","blank","blank","blank","blank","1","Bomb","1","blank","blank","blank","blank","blank","blank","blank","1","1","1"]
     
@@ -46,6 +53,28 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     
+    
+    
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    @objc func timerElapsed(){
+        
+        millisceonds -= 1
+        
+        let seconds = String(format: "%.2f", millisceonds/1000)
+        
+        timerLabel.text = "Time Remaining \(seconds)"
+        
+        if millisceonds <= 0 {
+            
+            
+            timer?.invalidate()
+            timerLabel.textColor = UIColor.red
+            
+            //checkGameEnded()
+        }
+        
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -107,7 +136,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     
     }
-
+    
     func findAdjacentNumbers(selected: Int, indexPath: IndexPath) -> [Int]  {
         let currentCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
         let leftTag = currentCell.tag - 1
@@ -126,7 +155,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         
         let downTag = currentCell.tag + 10
-      
+        
         
         let downRightTag = currentCell.tag + 11
         
@@ -139,7 +168,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if currentCell.tag % 10 == 9 && currentCell.tag != 9 && currentCell.tag != 99 {
             let upImage = UIImage(named: arrays[upTag])
             let upLeftImage = UIImage(named: arrays[upLeftTag])
-             let leftImage = UIImage(named: arrays[leftTag])
+            let leftImage = UIImage(named: arrays[leftTag])
             let downLeftImage = UIImage(named: arrays[downLeftTag])
             let downImage = UIImage(named: arrays[downTag])
             return [upTag, upLeftTag, leftTag, downLeftTag, downTag]
@@ -147,7 +176,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         else if currentCell.tag % 10 == 0 && currentCell.tag != 0 && currentCell.tag != 90 {
             let rightImage = UIImage(named: arrays[rightTag])
             let downRightImage = UIImage(named: arrays[downRightTag])
-             let downImage = UIImage(named: arrays[downTag])
+            let downImage = UIImage(named: arrays[downTag])
             let upImage = UIImage(named: arrays[upTag])
             let upRightImage = UIImage(named: arrays[upRightTag])
             return[rightTag, downRightTag, downTag, upTag, upRightTag]
@@ -187,10 +216,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let leftImage = UIImage(named: arrays[leftTag])
             return[upTag, upLeftTag, leftTag]
         } else {
-        return [rightTag, leftTag, upLeftTag, upRightTag, upTag, downRightTag,downLeftTag,downRightTag, downTag]
+            return [rightTag, leftTag, upLeftTag, upRightTag, upTag, downRightTag,downLeftTag,downRightTag]
         }
         
-}
+    }
     
     
     
@@ -204,6 +233,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var hundred = 100
     let randomNumber = Int.random(in: 0 ... 99)
+    
+    
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewTwo: UICollectionView!
     
@@ -221,7 +252,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         
-       
+        for i in 0...9 {
+            
+            blankBoxArray.insert("bomb", at: Int(arc4random_uniform(UInt32(blankBoxArray.count))))
+        
+        }
+        print(blankBoxArray)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let yourWidth = collectionView.bounds.width/10.5
@@ -241,11 +277,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
-
-
-
-        
-        
+    
+    
+    
+    
+    
     
     
     @IBAction func whenTapGesturePressed(_ sender: UITapGestureRecognizer) {
@@ -261,10 +297,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
     }
-        
-        
-        
-        
+    
+    
+    
+    
 }
 
 
